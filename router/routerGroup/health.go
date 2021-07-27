@@ -1,6 +1,7 @@
 package routerGroup
 
 import (
+	"gin-demo/config"
 	"gin-demo/router"
 
 	"github.com/gin-gonic/gin"
@@ -8,6 +9,6 @@ import (
 
 func init() {
 	router.Router.GET("/ping", func(context *gin.Context) {
-		context.JSON(200, gin.H{"message": "pong"})
+		context.JSON(200, gin.H{"message": config.Dir})
 	})
 }
